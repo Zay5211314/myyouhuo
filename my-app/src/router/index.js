@@ -6,9 +6,20 @@ import ShopCart from "../pages/shopCart"
 import Main from "../pages/main"
 import Guang from "../pages/guang"
 
+import Bestnew from '../pages/guang/bestnew'
+import Style from '../pages/guang/style'
+import Head from '../pages/guang/head'
+import Getnew from '../pages/guang/getnew'
+import Video from '../pages/guang/video'
+
+
+
+
+
 Vue.use(Router)
 
 export default new Router({
+  mode:"history",
   routes: [
     {
       path:"/home",
@@ -23,7 +34,38 @@ export default new Router({
     {
       path:"/guang",
       name:"Guang",
-      component:Guang
+      component:Guang,
+      children:[
+        {
+          path:"/bestnew",
+          name:"Bestnew",
+          component:Bestnew
+        },
+        {
+          path:"/style",
+          name:"Style",
+          component:Style
+        },
+        {
+          path:"/head",
+          name:"Head",
+          component:Head
+        },
+        {
+          path:"/getnew",
+          name:"Getnew",
+          component:Getnew
+        },
+        {
+          path:"/video",
+          name:"Video",
+          component:Video
+        }
+        // {
+        //   path:"/*",
+        //   redirect:"/bestnew"
+        // }
+      ]
     },
     {
       path:"/shopCart",
@@ -36,8 +78,9 @@ export default new Router({
       component:Main
     },
     {
-      path: '/*',
+      path:"/*",
       redirect:"/home"
     }
+    
   ]
 })

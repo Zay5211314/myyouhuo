@@ -7,6 +7,10 @@ import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import {store} from "./store/store"
 import axios from "axios"
+import swiper from 'swiper';
+import 'swiper/dist/css/swiper.min.css'
+import './assets/icon/iconfont.css'
+
 
 
 Vue.prototype.axios=axios
